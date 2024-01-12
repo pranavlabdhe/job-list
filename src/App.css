@@ -4,24 +4,21 @@
   width: 100%;
   height: 100vh;
   flex-direction: column;
+  background-color: #d68438;
 }
 
 .input_field {
-  width: 90%;
-  height: 30px;
+  width: 80%;
   border-radius: 12px;
+  padding: 16px;
   border: 1px solid #DADADC;
-}
-
-.parent_body:focus-within {
-  /* background-color: rgba(0,0,0,0.5); */
   z-index: 2;
+  outline: none !important;
 }
 
-/* input.input_field:focus{
-  outline: #DADADC;
-  border: 3px solid white;
-} */
+.input_field::placeholder {
+  font-family: 'Radio Canada', sans-serif;
+}
 
 .overlay {
   position: fixed;
@@ -32,5 +29,32 @@
   right: 0;
   bottom: 0;
   background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+}
+
+.search_btn{
+  background-color: #4bb39a;
+  margin: 4px;
+  width: 100%;
+  padding: 16px;
+  border-radius: 12px;
+  outline: none !important;
+  border: none;
+  box-shadow: 4px 5px 5px rgba(87, 85, 85, 0.349);
+  cursor: pointer;
+  color: black;
+  letter-spacing: 1px;
+  font-weight: bold;
+  font-family: 'Radio Canada', sans-serif;
+}
+
+.search_btn:hover {
+  background-color:#36846b ;
+  transition: 1s;
+}
+
+.btn_wrapper {
+  padding: 4px;
+  width: 50%;
   z-index: 2;
 }

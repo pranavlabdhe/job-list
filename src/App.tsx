@@ -1,30 +1,43 @@
 import React, { useRef, useState } from 'react'
 import './App.css'
 import { log } from 'console'
+import InputField from './components/InputField'
+import { Job } from './model'
+import JobsList from './components/JobsList'
 const App:React.FC = () => { 
 
-  const [hideOverlay,setHideOverlay] = useState(true)
+  const [job,setJobTodo] = useState<string>('')
 
-  console.log(hideOverlay)
+  const [jobs, setJobsTodo] = useState<Job[]>([])
+
+  const [hideOverlay, setHideOverlay] = useState<boolean>(true);
+  // console.log(job);
+
+  const handleJobs = (e:React.FormEvent) => {
+    e.preventDefault()
+    if(job) {
+        setJobsTodo([...jobs,
+          { id:Date.now(), job:job, isDone:false }])
+          setJobTodo('')
+          setHideOverlay(true)
+    }   
+  }
+  // to showOverlay
   const showOverlayFun = () => {
-    setHideOverlay(false)
-  }
+    setHideOverlay(false);
+  };
+    // to hideOverlay
   const closeOverlayFun = () => {
-    setHideOverlay(true)
-  }
+    setHideOverlay(true);
+  };
+
+  console.log(jobs); 
+  
+
   return (
     <>
-      
-    {hideOverlay ? 
-      null
-      : 
-      <div className='overlay' onClick={closeOverlayFun}></div>
-    }
-     <div className='parent_body'>
-      <h2 className='title'>JOB LIST</h2>
-      <input type="text" className='input_field' onClick={showOverlayFun} />
-      <p>jhdscghcs</p>
-    </div>
+      <InputField job={job} setJobTodo={setJobTodo} handleJobs={handleJobs} hideOverlay={hideOverlay} showOverlayFun={showOverlayFun} closeOverlayFun={closeOverlayFun}/>
+      <JobsList />
     </>
   )
 }
