@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useRef, useState } from 'react'
+import './App.css'
+import { log } from 'console'
+const App:React.FC = () => { 
 
-function App() {
+  const [hideOverlay,setHideOverlay] = useState(true)
+
+  console.log(hideOverlay)
+  const showOverlayFun = () => {
+    setHideOverlay(false)
+  }
+  const closeOverlayFun = () => {
+    setHideOverlay(true)
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+      
+    {hideOverlay ? 
+      null
+      : 
+      <div className='overlay' onClick={closeOverlayFun}></div>
+    }
+     <div className='parent_body'>
+      <h2 className='title'>JOB LIST</h2>
+      <input type="text" className='input_field' onClick={showOverlayFun} />
+      <p>jhdscghcs</p>
     </div>
-  );
+    </>
+  )
 }
 
-export default App;
+export default App
