@@ -9,9 +9,6 @@ interface Props {
   closeOverlayFun:() => void;
 }
 const InputField: React.FC<Props> = ({ job, setJobTodo,handleJobs,hideOverlay,closeOverlayFun,showOverlayFun }) => {
-
-
-
   return (
     <form onSubmit={handleJobs}>
       {hideOverlay ? null : (
@@ -24,6 +21,14 @@ const InputField: React.FC<Props> = ({ job, setJobTodo,handleJobs,hideOverlay,cl
           className="input_field"
           onClick={showOverlayFun}
           placeholder="Enter job todo"
+          value={job}
+          onChange={(e)=>setJobTodo(e.target.value)}
+        />
+         <input
+          type="text"
+          className="input_field mt-2"
+          onClick={showOverlayFun}
+          placeholder="Search job"
           value={job}
           onChange={(e)=>setJobTodo(e.target.value)}
         />

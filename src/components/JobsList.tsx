@@ -13,11 +13,9 @@ const JobsList: React.FC<Props> = ({ jobs,setJobsTodo })=> {
     )
   )}
 
-  const handleDelete = (id:number) => {
-    let getCurrentIdFromArr = jobs.findIndex((elem:any)=> elem.id === id);
-    if(getCurrentIdFromArr >= 0) {
-        setJobsTodo((prevJob:any)=> prevJob.splice(getCurrentIdFromArr,1))
-    }
+  const handleDelete = (id:any) => {
+    let getCurrentIdFromArr = jobs.filter((elem:any)=> elem.id !== id );
+        setJobsTodo(getCurrentIdFromArr)
   }
   
   
