@@ -7,11 +7,13 @@ const App:React.FC = () => {
 
   const [job,setJobTodo] = useState<string>('')
 
+  const [word , setWord] = useState('')
   const [jobs, setJobsTodo] = useState<Job[]>(()=> {
       // Retrieve jobs from local storage on component mount
       const storedJobs = localStorage.getItem('jobs');
       return storedJobs ? JSON.parse(storedJobs) : [];
   })
+  const [wordSearch, setWordSearch] = useState([...jobs])
 
   const [hideOverlay, setHideOverlay] = useState<boolean>(true);
   // console.log(job);
@@ -37,15 +39,15 @@ const App:React.FC = () => {
   const closeOverlayFun = () => {
     setHideOverlay(true);
   };
-  
-  console.log(jobs); 
+
+  // console.log(jobs); 
   
 
   return (
     <>
     <div className='parent_component'>
-      <InputField job={job} setJobTodo={setJobTodo} handleJobs={handleJobs} hideOverlay={hideOverlay} showOverlayFun={showOverlayFun} closeOverlayFun={closeOverlayFun}/>
-      <JobsList jobs={jobs} setJobsTodo={setJobsTodo}/>
+      <InputField job={job} setJobTodo={setJobTodo} handleJobs={handleJobs} hideOverlay={hideOverlay} showOverlayFun={showOverlayFun} closeOverlayFun={closeOverlayFun} jobs={jobs} setJobsTodo={setJobsTodo} wordSearch={wordSearch} setWordSearch={setWordSearch} word={word} setWord={setWord}/>
+      <JobsList jobs={jobs} setJobsTodo={setJobsTodo} wordSearch={wordSearch} setWordSearch={setWordSearch} word={word} setWord={setWord}/>
       </div>
     </>
   )

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 interface Props {
   job: string;
@@ -7,8 +7,28 @@ interface Props {
   hideOverlay: boolean;
   showOverlayFun:()=>void;
   closeOverlayFun:() => void;
+  jobs:any;
+  setJobsTodo: any;
+  wordSearch:any
+  setWordSearch:any;
+  word:any;
+  setWord:any
 }
-const InputField: React.FC<Props> = ({ job, setJobTodo,handleJobs,hideOverlay,closeOverlayFun,showOverlayFun }) => {
+const InputField: React.FC<Props> = ({ job, setJobTodo,handleJobs,hideOverlay,closeOverlayFun,showOverlayFun, jobs, setJobsTodo,wordSearch,setWordSearch,word,setWord }) => {
+    // const getJobName = (word:any) => {
+    //     setWord(word)
+    //             const getJobNameFromArr = wordSearch.filter((o:any)=> {
+    //             let jobLower = o.job.toLowerCase();
+    //             let wordLower = word.toLowerCase();
+    //             if(jobLower === wordLower) {
+    //                 return wordSearch;
+    //             } 
+    //         })
+    //         console.log(getJobNameFromArr)
+    // }
+    
+    // console.log("JOBS",jobs)
+    // get word search and setJobsToDo to word search else if word field is empty setWordSearch to jobs 
   return (
     <form onSubmit={handleJobs}>
       {hideOverlay ? null : (
@@ -29,8 +49,8 @@ const InputField: React.FC<Props> = ({ job, setJobTodo,handleJobs,hideOverlay,cl
           className="input_field mt-2"
           onClick={showOverlayFun}
           placeholder="Search job"
-          value={job}
-          onChange={(e)=>setJobTodo(e.target.value)}
+          value={word}
+          onChange={(e)=>setWord(e.target.value)}
         />
         <div className="btn_wrapper">
           <button type="submit"  className="search_btn">ADD JOB</button>
@@ -45,10 +65,3 @@ export default InputField;
 
 
 
-//   const handleToggleDone = (id:number) => {
-//     setJobsTodo((prevJob:any)=> {
-//       prevJob.map((job:any)=> {
-//         job.id === id ? {...job,isDone:!job.isDone}: job
-//       })
-//     })
-//   }

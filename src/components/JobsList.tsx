@@ -1,31 +1,42 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Job } from '../model'
 interface Props {
     jobs:any,
     setJobsTodo:any
+    wordSearch:any
+    setWordSearch:any
+    word:any;
+    setWord:any
   }
-const JobsList: React.FC<Props> = ({ jobs,setJobsTodo })=> {
+const JobsList: React.FC<Props> = ({ jobs,setJobsTodo,word })=> {
 
   const handleToggleDone = (id:number) => {
       setJobsTodo((prevJobs:any) =>
       prevJobs.map((job:any) =>
       job.id === id ? { ...job, isDone: !job.isDone } : job
     )
-  )}
+  )
+
+}
 
   const handleDelete = (id:any) => {
     let getCurrentIdFromArr = jobs.filter((elem:any)=> elem.id !== id );
         setJobsTodo(getCurrentIdFromArr)
   }
   
-  
+  useEffect(()=>{
+    console.log(word)
+  },[word])
+
 
   return (
     <div>
     <div className='jobs_main_div col-12'>
       <div className='col-12 d-flex align-items-center flex-column col_6_div'>
       <h2 className='font_class'>Jobs to do</h2>
-        {jobs.map(({id, job, isDone}:Job)=>{
+        {jobs.filter((item:any)=> {
+            return word.toLowerCase() === '' ? item : item.job.toLowerCase().includes(word)
+        }).map(({id, job, isDone}:Job)=>{
             return (
               <div className='col-10 col-sm-6 col-md-6 col-lg-6 d-flex align-items-center gx-5 justify-space-between col_class1' key={id}>
                   <div className='col-6 text-center'>
