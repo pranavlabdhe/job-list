@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 interface Props {
   job: string;
@@ -30,10 +30,20 @@ const InputField: React.FC<Props> = ({ job, setJobTodo,handleJobs,hideOverlay,cl
         <div className="btn_wrapper">
           <button type="submit"  className="search_btn">ADD JOB</button>
         </div>
-        <p>jhdscghcs</p>
+    
       </div>
     </form>
   );
 };
 
 export default InputField;
+
+
+
+//   const handleToggleDone = (id:number) => {
+//     setJobsTodo((prevJob:any)=> {
+//       prevJob.map((job:any)=> {
+//         job.id === id ? {...job,isDone:!job.isDone}: job
+//       })
+//     })
+//   }

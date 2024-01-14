@@ -1,6 +1,5 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './App.css'
-import { log } from 'console'
 import InputField from './components/InputField'
 import { Job } from './model'
 import JobsList from './components/JobsList'
@@ -8,10 +7,18 @@ const App:React.FC = () => {
 
   const [job,setJobTodo] = useState<string>('')
 
-  const [jobs, setJobsTodo] = useState<Job[]>([])
+  const [jobs, setJobsTodo] = useState<Job[]>(()=> {
+      // Retrieve jobs from local storage on component mount
+      const storedJobs = localStorage.getItem('jobs');
+      return storedJobs ? JSON.parse(storedJobs) : [];
+  })
 
   const [hideOverlay, setHideOverlay] = useState<boolean>(true);
   // console.log(job);
+  
+  useEffect(()=> {
+    localStorage.setItem('jobs',JSON.stringify(jobs))
+  },[jobs])
 
   const handleJobs = (e:React.FormEvent) => {
     e.preventDefault()
@@ -30,14 +37,16 @@ const App:React.FC = () => {
   const closeOverlayFun = () => {
     setHideOverlay(true);
   };
-
+  
   console.log(jobs); 
   
 
   return (
     <>
+    <div className='parent_component'>
       <InputField job={job} setJobTodo={setJobTodo} handleJobs={handleJobs} hideOverlay={hideOverlay} showOverlayFun={showOverlayFun} closeOverlayFun={closeOverlayFun}/>
-      <JobsList />
+      <JobsList jobs={jobs} setJobsTodo={setJobsTodo}/>
+      </div>
     </>
   )
 }

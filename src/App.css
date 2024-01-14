@@ -2,11 +2,9 @@
   display: flex;
   align-items: center;
   width: 100%;
-  height: 100vh;
   flex-direction: column;
-  background-color: #d68438;
+  
 }
-
 .input_field {
   width: 80%;
   border-radius: 12px;
@@ -47,7 +45,10 @@
   font-weight: bold;
   font-family: 'Radio Canada', sans-serif;
 }
-
+.font_class {
+  font-family: 'Radio Canada', sans-serif;
+  font-weight: bold;
+}
 .search_btn:hover {
   background-color:#36846b ;
   transition: 1s;
@@ -57,4 +58,77 @@
   padding: 4px;
   width: 50%;
   z-index: 2;
+}
+
+.jobs_div {
+  display: flex;
+  justify-content: space-around;
+  width: fit-content;
+  background: white;
+}
+.inner_job {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+.jobs_main_div {
+  display: flex;
+  /* justify-content: space-around; */
+  width: 100%;
+  margin-top: 16px;
+}
+.col_class1 {
+  background-color: aliceblue;
+  height: auto;
+  border-radius: 12px;
+  padding-left: 8px;
+  position: relative;
+}
+.col_6_div {
+  gap: 16px
+}
+
+.status_1{
+  color: #19a719;
+  font-weight: bold;
+  /* position: absolute; */
+}
+
+.status_2 {
+  color: #ff5959;
+  font-weight: bold;
+}
+
+.job_text {
+  font-size: 30px;
+  word-wrap: break-word;
+}
+
+.actions {
+  position: absolute;
+  top: 8px;
+  right: 0px;
+  display: flex;
+  gap: 14px;
+}
+
+.ic {
+  cursor: pointer;
+}
+
+.fa-trash-alt:hover {
+  color: red;
+}
+
+.fa-check-circle:hover {
+  color: #19a719;
+}
+
+.fa-undo:hover {
+  color: rgba(250, 193, 7, 0.711);
+}
+.job_text_line_through {
+  text-decoration: line-through;
+  font-size: 30px;
+  word-wrap: break-word;
 }

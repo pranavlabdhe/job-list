@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Radio+Canada:wght@300&display=swap');
-body {
+/* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #d68438;
+  height: 100vh;
 }
 
 code {
@@ -14,4 +16,9 @@ code {
 }
 .title{
   font-family: 'Radio Canada', sans-serif;
+} */
+
+.parent_component {
+  background-color: #d68438;
+  min-height: 100vh;
 }
