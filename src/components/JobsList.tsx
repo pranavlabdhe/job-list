@@ -29,7 +29,7 @@ const JobsList: React.FC<Props> = ({ jobs,setJobsTodo })=> {
       <h2 className='font_class'>Jobs to do</h2>
         {jobs.map(({id, job, isDone}:Job)=>{
             return (
-              <div className='col-6 d-flex align-items-center gx-5 justify-space-between col_class1' key={id}>
+              <div className='col-10 col-sm-6 col-md-6 col-lg-6 d-flex align-items-center gx-5 justify-space-between col_class1' key={id}>
                   <div className='col-6 text-center'>
                     {isDone ? <p className='mb-2 job_text_line_through'>{job}</p> :<p className='mb-2 job_text'>{job}</p> }
                   </div>
