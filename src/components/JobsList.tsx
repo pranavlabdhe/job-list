@@ -10,13 +10,21 @@ interface Props {
   }
 const JobsList: React.FC<Props> = ({ jobs,setJobsTodo,word })=> {
 
+  const rearrangeJobs = (id: number) => {
+    const index = jobs.findIndex((item1: any) => item1.id === id);
+    if (index !== -1) {
+      const removedElement = jobs.splice(index, 1)[0];
+      jobs.push(removedElement);
+    }
+  };
+
   const handleToggleDone = (id:number) => {
       setJobsTodo((prevJobs:any) =>
       prevJobs.map((job:any) =>
       job.id === id ? { ...job, isDone: !job.isDone } : job
     )
   )
-
+  rearrangeJobs(id);
 }
 
   const handleDelete = (id:any) => {

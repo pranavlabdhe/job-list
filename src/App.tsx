@@ -25,11 +25,17 @@ const App:React.FC = () => {
 
   const handleJobs = (e:React.FormEvent) => {
     e.preventDefault()
+       // Creating a new job object with the required properties
+  
     if(job) {
-        setJobsTodo([...jobs,
-          { id:Date.now(), job:job, isDone:false }])
-          setJobTodo('')
-          setHideOverlay(true)
+      const newJob = {
+        id: Date.now(),
+        job: job,
+        isDone: false,
+      };
+        setJobsTodo((prevJob)=>[newJob, ...prevJob])
+        setJobTodo('');
+        setHideOverlay(true);
     }   
   }
   // to showOverlay
