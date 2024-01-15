@@ -13,6 +13,7 @@ const App:React.FC = () => {
       const storedJobs = localStorage.getItem('jobs');
       return storedJobs ? JSON.parse(storedJobs) : [];
   })
+  
   const [wordSearch, setWordSearch] = useState([...jobs])
 
   const [hideOverlay, setHideOverlay] = useState<boolean>(true);

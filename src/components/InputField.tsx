@@ -15,16 +15,32 @@ interface Props {
   setWord:any
 }
 const InputField: React.FC<Props> = ({ job, setJobTodo,handleJobs,hideOverlay,closeOverlayFun,showOverlayFun, jobs, setJobsTodo,wordSearch,setWordSearch,word,setWord }) => {
+
+    const newList = () => {
+        setJobsTodo([])
+    }
+    useEffect(()=> {
+        localStorage.clear()
+    },[newList])
   return (
     <form onSubmit={handleJobs}>
       {hideOverlay ? null : (
         <div className="overlay" onClick={closeOverlayFun}></div>
       )}
       <div className="parent_body">
-        <h2 className="title">JOB LIST</h2>
+        <div className="d-flex col-12">
+            <div className="col-12 col-sm-6 col-md-6 col-lg-6 d-flex justify-content-end">
+            <h2 className="title">JOB LIST</h2>
+            </div>
+        <div className="col-12 col-sm-6 col-md-6 col-lg-6 d-flex justify-content-end">
+            <button type="button" className="btn btn-dark" onClick={newList}>New List</button>
+        </div>
+
+        </div>
+       
         <input
           type="text"
-          className="input_field"
+          className="input_field mt-3"
           onClick={showOverlayFun}
           placeholder="Enter job todo"
           value={job}

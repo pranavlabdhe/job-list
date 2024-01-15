@@ -21,11 +21,16 @@ Built with React: Leveraging the power and flexibility of React to create a dyna
 
 5. State Management: Efficiently manage application state for a smooth user experience.
 
-6. How to Run:
+6. Local Storage Integration:
+Persistent Data: Implemented local storage functionality, allowing users to seamlessly retrieve their task data whenever they open the application. Tasks are stored locally, providing a personalized and persistent experience.
+
+7. How to Run:
 Clone the repository.
 Install dependencies using npm install.
 Run the app using npm start.
 Access the app in your browser at http://localhost:3000.
+
+
 
 ## Future Enhancements:
 User Authentication: Implement user authentication to allow users to save and access their tasks across different sessions.
