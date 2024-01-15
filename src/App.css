@@ -132,3 +132,13 @@
   font-size: 30px;
   word-wrap: break-word;
 }
+
+.make_new_list {
+    position: relative;
+    top: -3px;
+    left: 4px;
+    
+}
+.make_new_list_text {
+  font-family: 'Bungee', sans-serif
+}
