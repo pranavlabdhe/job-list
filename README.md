@@ -19,9 +19,9 @@ Efficient Task Search: Quickly locate specific tasks with the powerful search fu
 4. Tech Stack:
 Built with React: Leveraging the power and flexibility of React to create a dynamic and interactive user interface.
 
-State Management: Efficiently manage application state for a smooth user experience.
+5. State Management: Efficiently manage application state for a smooth user experience.
 
-5. How to Run:
+6. How to Run:
 Clone the repository.
 Install dependencies using npm install.
 Run the app using npm start.
