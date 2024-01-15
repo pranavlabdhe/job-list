@@ -15,20 +15,6 @@ interface Props {
   setWord:any
 }
 const InputField: React.FC<Props> = ({ job, setJobTodo,handleJobs,hideOverlay,closeOverlayFun,showOverlayFun, jobs, setJobsTodo,wordSearch,setWordSearch,word,setWord }) => {
-    // const getJobName = (word:any) => {
-    //     setWord(word)
-    //             const getJobNameFromArr = wordSearch.filter((o:any)=> {
-    //             let jobLower = o.job.toLowerCase();
-    //             let wordLower = word.toLowerCase();
-    //             if(jobLower === wordLower) {
-    //                 return wordSearch;
-    //             } 
-    //         })
-    //         console.log(getJobNameFromArr)
-    // }
-    
-    // console.log("JOBS",jobs)
-    // get word search and setJobsToDo to word search else if word field is empty setWordSearch to jobs 
   return (
     <form onSubmit={handleJobs}>
       {hideOverlay ? null : (
@@ -47,7 +33,6 @@ const InputField: React.FC<Props> = ({ job, setJobTodo,handleJobs,hideOverlay,cl
          <input
           type="text"
           className="input_field mt-2"
-          onClick={showOverlayFun}
           placeholder="Search job"
           value={word}
           onChange={(e)=>setWord(e.target.value)}

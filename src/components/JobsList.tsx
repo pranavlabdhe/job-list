@@ -35,7 +35,7 @@ const JobsList: React.FC<Props> = ({ jobs,setJobsTodo,word })=> {
       <div className='col-12 d-flex align-items-center flex-column col_6_div'>
       <h2 className='font_class'>Jobs to do</h2>
         {jobs.filter((item:any)=> {
-            return word.toLowerCase() === '' ? item : item.job.toLowerCase().includes(word)
+            return word.toLowerCase() === '' ? item : item.job.toLowerCase().includes(word.toLowerCase())
         }).map(({id, job, isDone}:Job)=>{
             return (
               <div className='col-10 col-sm-6 col-md-6 col-lg-6 d-flex align-items-center gx-5 justify-space-between col_class1' key={id}>
