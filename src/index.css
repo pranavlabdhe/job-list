@@ -19,7 +19,7 @@ code {
  */
 
 .parent_component {
-  background-color: #d68438;
+  /* background-color: #d68438; */
   min-height: 100vh;
   padding: 16px;
 }
