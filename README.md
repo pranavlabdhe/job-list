@@ -1,6 +1,6 @@
-## Job List - React Todo List App
+## Task List - React Todo List App
 ## Overview:
-Job List is a feature-rich Todo List application built using React, designed to enhance task management and productivity. With a clean and intuitive user interface, users can seamlessly create, organize, and manage their tasks, track task statuses, delete completed tasks, and efficiently search for specific tasks.
+Task List is a feature-rich Todo List application built using React, designed to enhance task management and productivity. With a clean and intuitive user interface, users can seamlessly create, organize, and manage their tasks, track task statuses, delete completed tasks, and efficiently search for specific tasks.
 
 ## Key Features:
 1. Task Management:
