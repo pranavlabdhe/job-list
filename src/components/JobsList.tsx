@@ -179,7 +179,7 @@ const JobsList: React.FC<Props> = ({ jobs, setJobsTodo, word }) => {
                 {jobs.length === 0 ?
                   <div className='font_class mt-5'>
                     <img src={listImagUrl} className='' alt='list_image' />
-                    <h2>Your List will come up here</h2>
+                    <h2>Your list will come up here</h2>
                   </div>
                   :
                   <>
